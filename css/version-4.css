@@ -1,0 +1,46 @@
+header {
+    background-image: url('../img/version-4.jpg');
+}
+header .header-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    text-align: center;
+}
+header .header-content h1 {
+    color: #fff;
+}
+header .header-content p {
+    color: #fff;
+}
+header .header-content p a {
+    color: #fff;
+    border-color: #fff;
+}
+header .header-content a.btn {
+    border: 1px solid #ffffff;
+}
+header .header-content .btn span {
+    color: #fff;
+}
+header .navbar-default .navbar-nav li a {
+    color: #fefefe;
+}
+header .nav-sticy .navbar-nav li a {
+    color: #333;
+}
+
+
+
+
+
+
+/* Media Query */
+
+@media (max-width: 489px) {  
+    .header-content {
+        left: 0 !important;
+        transform: translateY(-50%) !important;
+    }
+}
