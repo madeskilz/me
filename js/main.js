@@ -5,7 +5,6 @@
     Copyright 2018
 *************************************************************/
 
-
 /*------------------------------------------------------------------------------------
     
 JS INDEX
@@ -21,126 +20,90 @@ JS INDEX
 
 -------------------------------------------------------------------------------------*/
 
+$(function() {
+  "use strict";
 
+  // [01] Fade Out preloader
 
+  $(".preloader")
+    .delay(1000)
+    .fadeOut("slow");
 
-$(function () {
+  // [02] Scroll To Section
 
-    'use strict';
-    
-    
-    // [01] Fade Out preloader
-    
-    $(".preloader").delay(1000).fadeOut("slow");
+  $(".navbar-nav li a").click(function(e) {
+    e.preventDefault();
 
-    
-    
-    
-    
-    // [02] Scroll To Section 
-    
-    $('.navbar-nav li a').click(function (e) {
-        
-        e.preventDefault();
-        
-        $('html, body').animate({
-           
-            scrollTop: $($(this).data('scroll')).offset().top
-            
-        }, 1000);
-        
-    });
-    
-    
-    
-    
-	
-    // [03] Auto Type Setup
-    
-	  $('header .header-content h1 .type').typed({
-		strings: ["UI/UX Specialist.","freelancer.","Programmer.","Web developer.", "Software Programmer"],
-		loop: true,
-		startDelay: 1000,
-		backDelay: 2000
-	  });
+    $("html, body").animate(
+      {
+        scrollTop: $($(this).data("scroll")).offset().top
+      },
+      1000
+    );
+  });
 
-    
-    
-    
-    
+  // [03] Auto Type Setup
 
-	// [04] Change Navbar Background And Padding
-    
-	$(window).scroll(function () {
+  $("header .header-content h1 .type").typed({
+    strings: [
+      "UI/UX Specialist.",
+      "Graphix Designer",
+      "Freelancer.",
+      "Programmer.",
+      "Web Developer.",
+      "Software Developer."
+    ],
+    loop: true,
+    startDelay: 1000,
+    backDelay: 2000
+  });
 
-	    var top = jQuery(document).scrollTop(),
+  // [04] Change Navbar Background And Padding
 
-	        batas = 20;
-	    
-	    if (top > batas) {
+  $(window).scroll(function() {
+    var top = jQuery(document).scrollTop(),
+      batas = 20;
 
-	        $('.navbar-brog').addClass('nav-sticy');
+    if (top > batas) {
+      $(".navbar-brog").addClass("nav-sticy");
+    } else {
+      $(".navbar-brog").removeClass("nav-sticy");
+    }
+  });
 
-	    } else {
+  // [05] Scroll To About Section
 
-	        $('.navbar-brog').removeClass('nav-sticy');
+  $("header .scroll-down").click(function() {
+    $("body, html").animate(
+      {
+        scrollTop: $("#about").offset().top - 90 + "px"
+      },
+      800
+    );
+  });
 
-	    }
+  // [06] Owl Carousel "Testimonials"
 
-	});	
-    
-    
-    
-    
-    
-    
-    
-	// [05] Scroll To About Section 
-    
-	$('header .scroll-down').click(function () {
-       
-        $('body, html').animate({
-           
-            scrollTop: $('#about').offset().top - 90 + 'px'
-            
-        }, 800);
-        
-    });
+  $(".grid").mixItUp();
 
+  // [07] Owl Carousel "Testimonials"
 
-    
-    
-    // [06] Owl Carousel "Testimonials"
-    
-    $('.grid').mixItUp();
-    
-    
-    
-    
-    
-    // [07] Owl Carousel "Testimonials"
-    
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        items: 1,
-        dots: false,
-        nav: true,
-        smartSpeed: 100,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-
-    
-
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 1,
+    dots: false,
+    nav: true,
+    smartSpeed: 100,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1000: {
+        items: 1
+      }
+    }
+  });
 });
-	
-
